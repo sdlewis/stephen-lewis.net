@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+
+<!--
+
+	Web page designed by Stephen D. Lewis
+	
+	Website design and implementation 
+	Copyright of Stephen Lewis, 2013
+
+	Send questions about website implementation,
+	maintenance, and updating to me at 
+	iam@stephen-lewis.net
+	
+	This website has been written with HTML5 and CSS3 standards of 2014.
+	It is mobile responsive to screens of width < 800px. 
+
+-->
+
+<html>
+	<head>
+		<meta name="description" content="This is the homepage for Math 4242 lecture 010 taught by Stephen Lewis.">
+		<meta name="keywords" content="math 4242, 4242, applied, linear, algebra, stephen, lewis, UM, U of M, UMN, University of Minnesota">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>Applied Linear Algebra</title>
+    
+		<link rel="stylesheet" type="text/css" href="4242.css" title="Lewis Stylesheet" />
+		<link rel="icon" type="image/png" href="../myImages/favIconGsas3.png"/>
+		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script type='text/javascript' src='../myScripts/menu.js'></script>
+		<script type='text/javascript' src='../myScripts/answers.js'></script>
+		<script type='text/javascript' src='../myScripts/menuScroll.js'></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+				tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+				"HTML-CSS": {scale:100,
+					matchFontHeight:true
+				},
+				skipStartupTypeset: true//skips initial rendering
+			});
+		</script>
+ 		<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				//$('#dataBar').text('typesetting...');
+				var script = document.createElement("script");
+				script.type = "text/javascript";
+				script.src  = "http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default";
+				//document.getElementsByTagName("head")[0].appendChild(script); Renders whole page
+				var intro = $('.intro')[0];
+				MathJax.Hub.Queue(["Typeset", MathJax.Hub, intro]);
+				var openMenu = document.getElementsByClassName("open menuItem")[0];
+				MathJax.Hub.Queue(["Typeset", MathJax.Hub, openMenu]);
+				//$('#dataBar').text('typeset intro');
+			});
+		</script>
+	</head>
+	<body>
+		<div id = "top" height = "0px">Hello! I'm a hidden message used for formatting :)</div>
+		<div class = "maindiv">
+			<div class="topbar" id="header">
+				<div id="titleText">Applied Linear Algebra</div>
+				<div id="imageContainer"><img id="logo" src = "../myImages/dilation.png"/></div>
+				<script type="text/javascript"><!--Sizing top picture-->
+					function pictureSize(){
+						var $top = $('.topbar');
+						var $title = $('#titleText');
+						var $imageContainer = $('#imageContainer');
+						var $image = $('.topbar img');
+						
+						
+						var topheight = $title.outerHeight();
+						$('#dataBar').append(' topheight ' + topheight);
+						
+						topoffset = $top.offset()
+						
+						$top.css('height', topheight);
+						
+						$image.css('height', topheight);
+						var l = topoffset['left'] + $top.outerWidth()-$image.width();
+						$('#dataBar').append( ' l ' + l);
+						$imageContainer.offset({top: topoffset['top'], left: l});
+						
+						$imageContainer.css('opacity', 1);
+						<!-- $('#dataBar').text('topbar img height:' + h); -->
+					};
+					
+					$(document).ready(function(){
+						var $img = $(document.getElementById('logo'));
+						$img.load(function(){
+							pictureSize();
+							<!--Fix on browsers with loading time lag-->
+							setTimeout(pictureSize, 5);
+							$(window).resize(pictureSize);
+						});
+						<!--Fix on browsers with loading time lag or with bugs using jQuery.load (some versions of IE)-->
+						setTimeout(pictureSize, 500);
+					});
+				</script>
+				
+			</div><!--End topbar-->
+			<div class = "content" >
+				<div class = "intro">
+					<h6>What is Linear Algebra?</h6>
+					
+					<p> Linear Algebra is the study of linear maps between vector spaces and the matrix algebra necessary
+					to apply the theory to concrete problems. Its roots are quite modest: solving
+					systems of linear equations. Linear algebra, however, has developed substantially
+					and permeates most of modern mathematics and much of modern science and engineering.
+					In this class, we will cover many topics of linear
+					algebra, including Gaussian elimination, matrix algebra, $LU$ factorization, vector spaces, subspaces, 
+					dimension, norms and inner products, positive definite matrices, minimization, nearest point and
+					least squares, data fitting, orthogonality, Gram-Schmidt method, the Fast Fourier Transform, and the 
+					revolutionary page rank algorithm.
+					</p>
+				
+					
+					<span id="dataBar">dataBar Empty</span>
+
+				</div><!--End .intro-->
+
+				<div class = "menu open">
+					<div class = "scrollArrow left protectHighlight">...</div>
+					<div class = "scrollArrow right protectHighlight"><</div>
+
+					<div class = "menuHeader protectHighlight">
+
+						<div  class = "menuBar">						
+							<div class = "menuScroll">
+								<div class = "menuButton open">Homework</div>
+								<div class = "menuButton">Lectures</div>
+								<div class = "menuButton">Grading</div>
+								<div class = "menuButton" id = "infoButton">Info/Links</div>
+
+							</div>
+						</div><!--End menuBar-->
+					</div><!--End menuHeader-->
+					<div class = "menuContent">
+					
+					
+					<!-- TO ADD A NEW TAB:
+						1. Remove the word "open" from the first menuItem (below)
+						2. Add in a new <div class = "menuItem open"></div> below
+						3. Copy the EXAMPLE ABSTRACT from the old quarter's menuItem to the new one
+						4. Remove the word "open" from the first menuButton (above)
+						5. Add in a new <div class = "menuButton open"></div> above
+						6. Add in new abstracts as they come using standard LaTeX:
+								$ $, \(\), $$ $$, \begin{align*}\end{align*} all well tested
+					-->
+							
+						<div class = "menuItem open"><!--Assignments-->
+							<p> Homework assignments will be posted here. The homework will not be collected, and instead
+							there will be weekly quizzes on the material. Quizzes and solutions will be posted here after the quiz is taken.
+							</p>
+							
+							<p><b>Quiz solutions:</b> <a href="files/Quiz01.pdf">Quiz 1</a>, <a href="files/Quiz02.pdf">Quiz 2</a>, 
+							<a href="files/Quiz03.pdf">Quiz 3</a>, Quiz 4 was take-home, <a href="files/Quiz05.pdf">Quiz 5</a>,
+							<a href="files/Quiz06.pdf">Quiz 6</a>, <a href="files/Quiz07.pdf">Quiz 7</a>, <a href="files/Quiz08.pdf">Quiz 8</a>, 
+							<a href="files/Quiz09.pdf">Quiz 9</a><!--, <a href="files/Quiz10.pdf">Quiz 10</a>, <a href="files/Quiz11.pdf">Quiz 11</a>, 
+							-->
+							</p>
+							<p><b>Midterms:</b> <a href="files/Midterm1.pdf">Midterm 1 Solutions</a>, 
+												<a href="files/TopicReview2.pdf">Review 2</a>,
+												<a href="files/Midterm2.pdf">Midterm 2 Solutions</a>,
+												<a href="files/TopicReview3.pdf">Final Review</a></p>
+							
+							<p><b>Assignment 1:</b> <u>Section 1.2</u> # 1-3, 6, 7begh, 12 (optional challenge question), 18, 20</p>
+							<p><b>Assignment 2:</b> <u>Section 1.3</u> # 1 becf, 3cdfg, 13 (challenge), 14, 16, 21a, 23, 32 cdef 
+													<u>Section 1.4</u> # 19 bdef, 25 (challenge)</p>
+							<p><b>Assignment 3:</b> <u>Section 1.5</u> # 3, 4 , 5, 9, 11 (challenge), 15, 18, 20 
+													(<span class="notice">Note:</span> #4 is related to the mistake I made in class!)	
+													<u>Section 1.8</u> # 1ace, 2cdfg, 7, 9, 10, 12 (related to last class example), 23, 24</p>
+							<p><b>Assignment 4:</b> <u>Section 1.9</u> # 1, 2, 3, 5, 6, 12 (<span class="notice">Hint</span>: use Thm 1.50. Remember that multiplying by an
+													elementary matrix on the left is the same as performing a row operation)
+													<u>Section 2.1</u> # 1, 2, 8, 13. <u>Section 2.2</u> # 1, 7, 8, 10</p>
+							<p><b>Assignment 5:</b> <u>Section 2.3</u> # 3, 4, 5, 7 (<span class="notice">Note</span>: a matrix $S$ is symmetric if
+													it matches its transpose; $S^T = S$), 8, 14a, 16, 17, 19 (<span class="notice">Note</span>: (a)
+													is related to main idea in the proof of Lemma 2.30), 21, 30
+													<u>Section 2.4</u> # 1, 2, 4, 14 (<span class="notice">Hint</span>: use Lemma 2.24),
+													15, 21, 25ab (<span class="notice">Hint</span>: Use Lemma 2.30)
+													<u>Section 2.5</u> # 1, 2, 3, 5, 12, 29 (<span class="notice">Hint</span>: Form the corresponding
+													matrices and check the compatibility conditions after row reducing), 36, 38, 39.</p>
+							<p><b>Assignment 6:</b> <u>Section 3.1</u> # 2, 7, 9, 10, 11, 19, 22 (<span class="notice">Hint</span>:
+													the formula <i>does</i> define an inner product on $\mathcal{P}^{(n)}$. Why?),
+													25, read 29 and then answer 30
+													<u>Section 3.2</u> # 1ab, 3, 8, 18, 25, 19 (do 25 first), 27, 39, 40
+													<u>Section 3.3</u> # 4, 11, 13, 14 (challenge)</p>
+							<p><b>Assignment 7:</b> <u>Section 3.4</u> # 1 (<span class="notice">Hint</span>: Use the result of
+													the next section, Thm 3.37), 7, 10, 11. <u>Section 3.5</u> # 1, 3a
+													<u>Section 4.2</u> # 1, 3abfg, 5, 6, (challenge: do 6 with general $n$, i.e., solve
+													problem 6 for <b><i>all</i></b> $n$.)</p>
+							<p><b>Assignment 8:</b> <u>Section 4.3</u> # 1, 2, 3, 7 (<span class="notice">Note</span>: as is listed on the top of
+													these exercises, "distance" refers to the standard $L^2$ distance unless otherwise indicated.)</p>
+							<p><b>Assignment 9:</b> <u>Section 4.3</u> # 14 bd, 15. <u>Problem</u>: Find <i><b>all</b></i> least squares solutions to the system
+													$Ax = b$ where 
+													<ol type = 'a'>
+													<li class = "problem">$$A = \begin{pmatrix}
+													2 & -4 & 1 & -1\\
+													1 & -2 & -2 & 0\\
+													3 & -6 & -1 & 1
+													\end{pmatrix}
+													\quad \mbox{and} \quad b = \begin{pmatrix}
+													1\\0\\1\end{pmatrix}.$$</li>
+													<li class = "problem">$$A = \begin{pmatrix}
+													2 & 3 &  1\\
+													4 & -2 & 10\\
+													1 & 5 & -3\\
+													2 & 0 & 4\\
+													\end{pmatrix}
+													\quad \mbox{and} \quad b = \begin{pmatrix}
+													2\\-1\\1\\3 \end{pmatrix}.$$</li>
+													</ol>
+													(<span class="notice">Hint</span>: Use your work from 15 (c) and 15 (d).)</p>
+													
+								<div class = "answer">
+									<div class = "solution">
+										Answers: a. $x = \frac{1}{5}\begin{pmatrix}
+										2&0&1&0\end{pmatrix}^T$ $+ s\begin{pmatrix}2 & 1 & 0 & 0\end{pmatrix}^T$, 
+										b. $x =\frac{1}{941}\begin{pmatrix}227& 304 &0\end{pmatrix}^T$ $+ s
+										\begin{pmatrix}-2&1&1\end{pmatrix}^T.$
+									</div>
+									<br>
+									
+									<div class = "answerButton button">Show Answers</div>
+							
+								</div><br>
+							
+							<p><b>Assignment 10:</b> <u>Section 4.4</u> # 1, 2, 3 (but, as 2008 shows, don't buy a house based on this model!)
+														4-6 (<span class="notice">Hint</span>: For problems 4-6, look at example 4.11),
+														12 bd(just construct the inerpolating polynomials: don't pay attention to the 
+														"Lagrange form"), 13bd, 15, 16 (<span class="notice">Hint</span>: objects fall according to
+														to a quadratic polynomial), 31, 32, 33, 35.
+														</p>
+							<p><b>Assignment 11:</b> <u>Section 5.1</u> # 1abdf, 3abdf, 6, 10, 14, 21, 22, 23
+													 <u>Section 5.2</u> # 1, 4, 7.
+													 <u>Complex arithmetic</u> Do some problems at 
+													 <a href="http://www.math.armstrong.edu/MathTutorial/exerciseStatements/ComplexNumbers/ComplexStmt.html">this link</a>.
+													 (<span class="notice">Hint</span>: the quadratic formula holds for complex equations; see the lecture notes
+													 for division with complex numbers.)</p>
+							<p><b>Assignment 12:</b> # 1 Compute the sampled exponential bases $\omega_0,\omega_1,\ldots, \omega_{n-1}$ for
+													$n = 3, 4, 6, 8, 12$. # 2 Verify when $n=4$ that the sampled exponentials $\omega_0,\omega_1,\omega_2,
+													\omega_3$ form an orthonormal basis under the averaged dot product. <u>Section 5.7</u> # 1, 2, 3 (for $n=4,8$) (<span class="notice">
+													Note</span>: The sign function $\mathrm{sign}(a)$ is 1 for $a> 0$, -1 for $a<0$, 
+													0 for $a=0$.) </p>
+							<p><b>Assignment 13:</b> This <a href="files/Quiz11.pdf">take-home quiz</a></p>
+						</div>
+						
+						<div class = "menuItem"><!--Lectures-->
+							<p><b>Week 1, 9/3-9/5:</b> 1.1-1.3; Systems of linear equations, matrices, Gaussian Elimination.
+								<a href="files/Lecture01.pdf">Lecture 1</a>, <a href="files/Lecture02.pdf">Lecture 2</a> </p>
+							<p><b>Week 2, 9/8-9/12:</b> 1.3-1.5; $LU$ factorization, permuted $LU$ factorization, inverse matrices.
+								<a href="files/Lecture03.pdf">Lecture 3</a>, <a href="files/Lecture04.pdf">Lecture 4</a>, <a href="files/Lecture05.pdf">Lecture 5</a> </p>
+							<p><b>Week 3, 9/15-9/19:</b> 1.8-1.9; General linear systems, homogeneous equations, determinants.
+								<a href="files/Lecture06.pdf">Lecture 6</a>, <a href="files/Lecture07.pdf">Lecture 7</a>, <a href="files/Lecture08.pdf">Lecture 8</a> </p>
+							<p><b>Week 4, 9/22-9/26:</b> 2.1-2.3; Vector spaces, subspaces, span. <a href="files/Lecture09.pdf">Lecture 9</a>,
+							<a href="files/Lecture10.pdf">Lecture 10</a>, <a href="files/Lecture11.pdf">Lecture 11</a></p>
+							<p><b>Week 5, 9/29-10/3:</b> Workshops on Proofs | 2.3; Linear Independence. <a href="files/Lecture12-Workshop1.pdf">
+								Lecture 12 / Workshop 1</a>, <a href="files/Lecture13-Workshop2.pdf">Lecture 13 / Workshop 2</a>, <a href="files/Lecture14.pdf">
+								Lecture 14</a></p>
+							<p><b>Week 6, 10/6-10/10:</b> Bases, dimension, matrix subspaces. <a href="files/Lecture15.pdf">Lecture 15</a>,
+														<a href="files/Lecture16.pdf">Lecture 16</a>, 
+														<a href="files/Lecture17.pdf">Lecture 17</a></p>
+							<p><b>Week 7, 10/13-10/17:</b> Application&mdash;Solving PDE numerically, Review, <span class="notice">Midterm 1 on 10/17</span>.</p>
+							<p><b>Week 8, 10/20-10/24:</b> 3.1-3.3; Inner products, related inequalities, norms.
+															<a href="files/Lecture19.pdf">Lecture 19</a>,
+															<a href="files/Lecture20.pdf">Lecture 20</a>,
+															<a href="files/Lecture21.pdf">Lecture 21</a></p>
+							<p><b>Week 9, 10/27-10/31:</b> 3.4, Thm 3.37, 4.2, 4.3; Positive definite matrices, minimization of quadratic functions, nearest point.
+															<a href="files/Lecture22.pdf">Lecture 22</a>,
+															<a href="files/Lecture23.pdf">Lecture 23</a>,
+															<a href="files/Lecture24.pdf">Lecture 24</a></p>
+							<p><b>Week 10, 11/3-11/7:</b> 4.3; Nearest point, least squares.
+															<a href="files/Lecture25.pdf">Lecture 25</a>,
+															<a href="files/Lecture26.pdf">Lecture 26</a></p>
+							<p><b>Week 11, 11/10-11/14:</b> Data fitting, interpolation, orthogonality. 
+															<a href="files/Lecture27.pdf">Lecture 27</a>,
+															<a href="files/Lecture28.pdf">Lecture 28</a>,
+															<a href="files/Lecture29.pdf">Lecture 29</a></p>
+							<p><b>Week 12, 11/17-11/21:</b> Gram-Schmidt process, complex vector space, review.
+															<a href="files/Lecture30.pdf">Lecture 30</a>,
+															<a href="files/Lecture31.pdf">Lecture 31</a>
+							<p><b>Week 13, 11/24-11/28:</b> <span class="notice">Midterm 2 on 11/24. No class 11/26.</span></p>
+							<p><b>Week 14, 12/1-12/5:</b> Discrete Fourier analysis, the fast Fourier transform.
+															<a href="files/Lecture32.pdf">Lecture 32</a>,
+															<a href="files/Lecture33.pdf">Lecture 33</a>,
+															<a href="files/Lecture34.pdf">Lecture 34</a>,
+															<a href="files/Examples.pdf">Fourier Transform Examples</a>,
+															<a href="http://jeremykun.com/2012/07/18/the-fast-fourier-transform/">Fourier transform in action</a>
+															<!--<a href="files/Lecture31.pdf">Lecture 31</a>--></p>
+							<p><b>Week 15, 12/8-12/12:</b> Google and page rank, review.
+															<a href="files/Lecture35.pdf">Lecture 35</a></p>
+							<p ><span class="notice">Final Exam 12/16:</span> 1:30pm-3:30pm in room our regular classroom.</p>
+						</div>
+
+						<div class = "menuItem"><!--Grading-->
+							<div id="gradingContainer">
+								<div id="classGrade">
+									<b>Quizzes:</b> 25%<br>
+									<b>Midterm 1:</b> 25%<br>
+									<b>Midterm 2:</b> 25%<br>
+									<b>Final Exam:</b> 25%<br>
+								</div>
+								
+								<p>This table shows the grading weights for this class. Notice that the homework is not formally part
+								of your grade, but to succeed in this class, you will need to master the theory and techniques.
+								The best way to do this is through doing the homework, studying together, and coming to office hours
+								with questions.
+								</p>
+
+								<p>The class will be graded relative to a curve, with each exam curved individually and the quizzes
+								curved as a whole. The lowest 2 quiz grades will be dropped to accommodate an absence, bad day,
+								etc... However, if you need to miss a class due to a religious observance, let me know in advance
+								and we can schedule a make-up quiz.
+								</p>
+								
+								<p class = "curve"><b>Curve for the first exam:</b> Take your score out of 50, divide by 10. This is your score on the 4.0 scale.
+								For example, if you received a 32/50, this translates to a 32/10 = 3.2 on the 4.0 scale, or a high B. If you received a
+								25/50, this translates to a 25/10 = 2.5, or somewhere between a C+ and a B-.
+								</p>
+								
+
+							</div>
+						</div>
+						
+						<div class = "menuItem" id = "info"><!--Info-->
+							<div>
+								<b>Instructor:</b> Stephen Lewis<br>
+								<b>Website:</b> <a href="http://www.stephen-lewis.net">stephen-lewis.net</a><br>
+								<b>Office Hours:</b> W 12:30-2:30, Th 2-4, or by appointment<br>
+								<b>Office:</b> Vincent Hall 221 (<a href="http://www1.umn.edu/twincities/maps/VinH/" target = "__map">Map</a>) <br>
+								<b>Email:</b> <a href="mailto:iam@stephen-lewis.net">iam@stephen-lewis.net</a><br>
+								<a href="files/syllabus.pdf">Syllabus</a><br>
+								<a href="https://diversity.umn.edu/disability/home">Disability Resource Center</a><br>
+							</div>
+						</div>
+						
+						<br><!--Formatting-->
+						
+						<script><!--Button script-->
+							$(document).ready(function(){
+								
+								$('#toTop').click( function(){
+									$('html, body').animate({
+										scrollTop: 0
+									}, 1000);
+								});
+							});
+						</script>
+						
+						<div class="backUp protectHighlight"><!--Button-->
+							<!--<div class="button protectHighlight" id = "close">Close</div>--> <div class ="button protectHighlight" id='toTop'>Back to the top</div>
+						</div>	
+					</div><!--End menuContent-->
+
+				</div><!--End Menu-->
+			</div><!--End content-->
+		</div><!--End maindiv-->
+	</body>
+</html>

@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+
+<!--
+
+	Web page designed by Stephen D. Lewis
+	
+	Website design and implementation 
+	Copyright of Stephen Lewis, 2013
+
+	Send questions about website implementation,
+	maintenance, and updating to me at 
+	iam@stephen-lewis.net
+	
+	This website has been written with HTML5 and CSS3 standards of 2014.
+	It is mobile responsive to screens of width < 800px. 
+
+-->
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="The Graduate Student Analysis Seminar gives
+		its participants a chance to talk in a low pressure environment and
+		the chance to hear talks aimed at their understanding.">
+		<meta name="keywords" content="gsas, analysis, uw, university of washington, math, analysis, grad, graduate, student, seminar">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>UW GSAS</title>
+    
+		<link rel="stylesheet" type="text/css" href="gsas.css" title="Lewis Stylesheet" />
+		<link rel="icon" type="image/png" href="../myImages/favIconGsas3.png"/>
+		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script type='text/javascript' src='../myScripts/menu.js'></script>
+		<script type='text/javascript' src='../myScripts/shortLong.js'></script>
+		<script type='text/javascript' src='../myScripts/menuScroll.js'></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+				tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+				"HTML-CSS": {scale:100,
+							 matchFontHeight:true
+							},
+				skipStartupTypeset: true//skips initial rendering
+			});
+		</script>
+ 		<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				//$('#dataBar').text('typesetting...');
+				var script = document.createElement("script");
+				script.type = "text/javascript";
+				script.src  = "http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default";
+				//document.getElementsByTagName("head")[0].appendChild(script); Renders whole page
+				var openMenu = document.getElementsByClassName("open menuItem")[0];
+				MathJax.Hub.Queue(["Typeset",MathJax.Hub,openMenu]);
+				//$('#dataBar').text('typeset intro');
+			});
+		</script>
+	</head>
+	<body>
+		<div id = "top" height = "0px">Hello! I'm a hidden message used for formatting :)</div>
+		<div class = "maindiv">
+			<div class="topbar" id="header">
+				<div id="titleText">Graduate Student Analysis Seminar</div>
+				<script type="text/javascript">
+					function pictureSize(){
+						var h = 0;
+						<!-- $('#dataBar').text('topbar img height:' + h); -->
+						h = $('.topbar').height();
+						$image = $('.topbar img');
+						$image.css('height', h);
+						w = $image.css('width');
+						w2 = $('#titleText').css('width');
+						w3 = $('#header').css('width');
+						<!-- $('#dataBar').text('topbar img height:' + h); -->
+						<!-- $('#dataBar').text('w:'+ w + ', w2:' + w2 + ', w3:' + w3); -->
+					};
+					$(document).ready(function(){
+						pictureSize();
+						$(window).resize(pictureSize);
+					});
+				</script>
+				<img src = "../myImages/logoGSASsmall.png"/>
+			</div><!--End topbar-->
+			<div class = "content" >
+				<div class = "intro">
+					<h6>What is the Grad Student Analysis Seminar?</h6>
+					<p> The Grad Student Analysis Seminar (GSAS) is an analysis 
+					seminar at UW where the talks are given by, to, and for graduate
+					students. Our goals are to provide a low pressure situation for
+					UW analysis graduate students to gain experience giving talks, as well as
+					to increase collaboration and wide awareness of research.
+					Unless otherwise noted, we meet Thursdays from 2:30 to 3:30 in Padelford C-401. Coffee and cookies are available
+					before and during the talk.
+					Please contact us at <a href="mailto:uwgsas@gmail.com">uwgsas@gmail.com</a>
+					if you are interested in speaking or being added to the mailing list.
+					</p>
+				
+				
+					<!--<p>All talks for Fall 2013 are scheduled. We are accepting abstracts for Winter 2014!
+					</p>-->
+
+					
+					<p>	Organized by Jessica Merhej and Dali Nimer.
+					</p>
+					
+					<span id="dataBar">dataBar Empty</span>
+
+				</div><!--End .intro-->
+
+				<div class = "menu open">
+					<div class = "scrollArrow left protectHighlight">...</div>
+					<div class = "scrollArrow right protectHighlight"><</div>
+
+					<div class = "menuHeader protectHighlight">
+
+						<div  class = "menuBar">						
+							<div class = "menuScroll">
+								<div class = "menuButton open">Wi '15</div>
+								<div class = "menuButton">Au '14</div>
+								<div class = "menuButton">Sp '14</div>
+								<div class = "menuButton">Wi '14</div>
+								<div class = "menuButton">Au '13</div>
+								<div class = "menuButton">Sp '12</div>
+								<div class = "menuButton">Au '11</div>
+								<div class = "menuButton">Sp '11</div>
+								<div class = "menuButton">Wi '11</div>
+							</div>
+						</div><!--End menuBar-->
+					</div><!--End menuHeader-->
+					<div class = "menuContent">
+					
+					
+					<!-- TO ADD A NEW QUARTER:
+						1. Remove the word "open" from the first menuItem (below)
+						2. Add in a new <div class = "menuItem open"></div> below
+						3. Copy the EXAMPLE ABSTRACT from the old quarter's menuItem to the new one
+						4. Remove the word "open" from the first menuButton (above)
+						5. Add in a new <div class = "menuButton open"></div> above
+						6. Add in new abstracts as they come using standard LaTeX:
+								$ $, \(\), $$ $$, \begin{align*}\end{align*} all well tested
+					-->
+							
+						<div class = "menuItem open"><!--Newest quarter-->
+							<!--EXAMPLE ABSTRACT
+
+							Thursday, Month Day, 2:30pm
+							<h6>Title</h6>
+							by Author<br><br>
+
+							Paragraph 1 <br><br>
+							Paragraph 2 <br><br>
+							-->
+							<!--All talks for Spring 2014 are scheduled. <br><br>-->
+							
+							Thursday, January 22nd, 2:30pm
+							<h6>Diffusion Approximation of Refelected Brownian Motion</h6>
+							by <a href=" http://www.math.washington.edu/~ansa1989/">Andrey Sarantsev</a><br><br>
+ 
+							Consider a reflected Brownian motion on the positive half-line. 
+							This is not a diffusion, but it can be approximated by diffusions.
+			
+							This is joint work with Cameron Bruggeman from Columbia University. 
+							
+						</div><!--End Wi '15-->
+						<div class = "menuItem"><!--Au '14-->
+							
+							Thursday, December 4th, 2:30pm
+							<h6>An Inverse Problem with Partial Data in an Infinite Slab</h6>
+							by Kaloyan Marinov<br><br>
+							
+							Many inverse problems arise out of a PDE framework. The foundational hypothesis in the statement of an inverse 
+							problem is the so-called <i>measurement data</i>. In many cases, the nature of the measurement data is mathematically encoded 
+							in a linear operator between appropriately chosen vector spaces; an inverse problem can be studied when full measurement 
+							data is available (corresponding to full knowledge of some linear operator) or when partial measurement data is available 
+							(corresponding to limited knowledge of some linear operator). After one has decided upon the measurement data (to be taken 
+							as a hypothesis in the analysis), there are three aspects of an inverse problem which one can choose to study: uniqueness, 
+							stability, and reconstruction.<br><br>
+
+							In this talk, we will consider an inverse problem associated with the Schrödinger operator $- \Delta + q$ on 
+							an infinite slab $\Sigma \subset \mathbb{R}^n$, where $q$ is a compactly supported function from $L^\infty(\Sigma)$ 
+							and $n \geq 3$. We will assume to have knowledge of partial measurement data. The discussion will then focus 
+							on the uniqueness aspect of our inverse problem (due to [Li-Uhlmann]) as well as on its stability aspect (due
+							to [Caro-M]).<br><br>
+							
+							Thursday, November 13th, 2:30pm
+							<h6>Collisions of Competing Brownian Particles</h6>
+							by <a href=" http://www.math.washington.edu/~ansa1989/">Andrey Sarantsev</a><br><br>
+							Consider a finite system of Brownian particles on the real line, with each particle 
+							having drift and diffusion coefficients depending on its current rank relative to other particles. A triple collision 
+							occurs when three or more particles occupy the same position at the same time. We find a necessary 
+							and sufficient condition for absence of triple collisions. We also investigate some other types of 
+							collisions. This continues the work by Ichiba, Karatzas and Shkolnikov. <br><br>
+							
+							Thursday, November 6th, 2:30pm
+							<h6>An Introduction to Probability in SAGE</h6>
+							by <a href="http://www.math.washington.edu/~tadic/">Tvrtko Tadic</a><br><br>
+							
+							In the talk, we present a Sage package for doing symbolic 
+							probability calculations. We will show how to build a (finite) probability space and define random variables on it. 
+							Through examples, we will show how to manipulate those objects to check and find different results. There are many packages that 
+							offer different possibilities for doing statistical computations and simulations.
+							Unfortunately, there aren't as many packages with capabilities of doing various symbolic computations with a probabilistic model.
+							We will go over the basic probability and Sage terminology that will be used in the talk.<br><br>
+							
+							Thursday, October 30th, 2:30pm
+							<h6>Stochastic Processes: An Introduction to Brownian Motion</h6>
+							by Clayton Barnes<br><br>
+							The goal of this talk is to introduce the defining properties of Brownian motion (BM) 
+							as a continuous time stochastic process, and to use these properties to prove several facts. 
+							We aim is to show that, almost surely, the times where BM is differentiable forms a set of measure zero.<br><br>
+							
+							Thursday, October 16th, 2:30pm
+							<h6>The Battle Between Dispersion and Nonlinearity: Global Existence or Blow-up?</h6>
+							by Zihui Zhao<br><br>
+							This talk will focus on the nonlinear Schrodinger equations (NLS), a prototype for the nonlinear 
+							dispersive equations. I will start by introducing some properties of the NLS: the local well-posedness 
+							theory and conservation laws, the criticality of nonlinearity, and a special solution called the solution.
+							Then I will focus on the characterization of solutions of NLS in different regimes.<br><br>
+							
+							Thursday, October 9th, 2:30pm
+							<h6>Brrr-el Sets and Capacity: a Snoverview of Frostman's Lemma</h6>
+							by Sean McCurdy<br><br>
+							​This talk will cover some of the relationships between Hausdorff​ ​dimension, 
+							$t$-Energy, Riesz $s$-capacity, Capacity dimension, and​ ​Hausdorff measure for Borel Sets.
+							In particular, it will focus on​ ​Frostman's lemma and the construction of a certain measure, 
+							but there​ should be time to set up the context and consider the implications.
+							<br><br>
+							
+						</div><!--End Au14-->
+						<div class = "menuItem">
+							
+							Thursday, June 5th, 2:30pm
+							<h6>$o$-minimality and $n$-to-$1$ Graphs in the Study of Electrical Networks</h6>
+							by Reid Dale<br>
+							
+							<div class = "shortLong">
+								<div class = "abstract">
+
+									<div class = "container">
+									<br>
+									In this talk I propose that methods of a branch of mathematical logic called model theory serve 
+									as a possible framework for studying discretized versions of continuous inverse problems. The 
+									example I consider is that of the inverse problem on electrical networks studied in the last 
+									25 years in Jim Morrow's REU. The basic setup of the problem is to model an electrical network 
+									as a finite graph $G$ (with a partition of the vertices of  $G$ into interior and 
+									boundary vertices $\mathring{G}$<!--$\overset\circ{G}$--> and $\partial G$) with conductivities on the edges and 
+									currents flowing through the vertices as constrained by Kirchhoff's law, which intuitively 
+									says that on interior vertices the current flowing into that vertex is equal to current flowing 
+									out of that vertex. The inverse problem is to uniquely determine the conductivities of the 
+									electrical network just by knowing the current flow at the boundaries and the structure of 
+									the graph $G$. All of this information can be represented as a linear operator $\Lambda_{\gamma}$,
+									called the response matrix of a conductivity function $\gamma$ that assigns to each 
+									edge $e\in E_G$ in the graph a positive real number. The inverse problem can be therefore 
+									reformulated: Given a matrix $\Lambda$ that we know to be the response matrix of some graph,
+									can we uniquely find a conductivity $\gamma$ such that $\Lambda = \Lambda_{\gamma}$?<br><br>
+
+									The first glimpse of model theory to study the problem was the discovery that the methods of real
+									algebraic geometry could be used to study the phenomenon of $n$-to-$1$ graphs, which are electrical 
+									networks with boundary data admitting exactly $n$ conductivities as solutions to the inverse problem.
+									I associated to a given graph $G$ a measurement map $L_G: (\mathbb{R}^+)^{|E_G|} \to M_{|\partial G|}(\mathbb{R})$
+									mapping a conductance $\gamma \mapsto \Lambda_{\gamma}$. A graph is then $n$-to-$1$ precisely when there is 
+									a matrix $\Lambda \in M_{|\partial G|}(\mathbb{R})$ such that $|L_G^{-1}(\Lambda)| = n$. What is special about this
+									measurement map $L_G$ is that it is a rational function between smooth manifolds. Using the machinery of real
+									algebraic geometry I was able to show that associated to each graph was a finite set $\Psi_G$ of 
+									cardinal numbers such that $G$ could be endowed with the structure of an $n$-to-$1$ graph. Furthermore,
+									I showed that the only possible values for $n$ were finite numbers and the cardinality of the continuum,
+									providing a negative solution to the question of whether or not a finite electrical network could be countable-to-one.<br><br>
+
+									The use of more sophisticated tools from model theory has led to a much stronger refinement of this result to the 
+									computable setting. In particular, one is able to computably list all of the numbers in the set $\Psi_G$ described 
+									above. Furthermore, one can algorithmically partition the space of matrices $M_{|\partial G|}(\mathbb{R})$ into 
+									finitely many nice sets called  ``cells" such that over each cell the map $L_G$ has the structure of a <i>fibration</i>
+									map. Moreover, I show that if one is given a (suitably presentable) matrix $\Lambda$ then one can determine in finitely
+									many steps how many solutions to the inverse problem it admits and, if this number is finite, computably approximate 
+									all solutions to arbitrary precision and accuracy. Together these results answer in full generality
+									many questions that students have worked on for the last two decades. Despite this, these results also indicate 
+									how little we know about the problem and have been the source of many conjectures and questions that
+									I hope will stimulate research in the area.<br><br>
+									</div>
+								</div>
+								<div class = "abstractCurtain">
+									<svg height = "100%" width = "100%" viewbox="0 0 1 1" preserveAspectRatio = "none">
+									  <defs>
+										<linearGradient id="grad1" x1="0" y1="0" x2="0" y2="1">
+										  <stop offset="0" style="stop-color:rgba(255,255,255,0);stop-opacity:1" />
+										  <stop offset="1" style="stop-color:rgba(255,255,255,1);stop-opacity:1" />
+										</linearGradient>
+									  </defs>
+									  <rect x="0" y="0" width = "1" height="1" fill="url(#grad1)" />
+									</svg>
+								</div>
+								<div class = "previewButton button">Expand/Collapse</div>
+							
+							</div><br>
+							
+							
+							Thursday, May 29th, 2:30pm
+							<h6>The Angular Derivative Problem</h6>
+							by Nikolaos Karamanlis <br><br>
+							The angular derivative problem is to give necessary and sufficient geometric conditions on
+                            the boundary of a simply connected domain $\Omega$ near $\zeta\in \partial\Omega$ so that a conformal map 
+							of $\Omega$ onto the upper half plane extends to be ``conformal'' at $\zeta$. It is an old problem dating back
+                            at least to 1930. We will state some of the main results in the area and use them to examine
+                            a question asked by Rodin and Warschawski. We will conclude with an open problem.<br><br>
+                            
+							Thursday, May 22nd, 2:30pm
+							<h6>Free Boundary Regularity Below the Continuous Threshold</h6>
+							by <a href="http://www.stephen-lewis.net">Stephen Lewis</a><br><br>
+							
+							Let $\Omega$ be a region in Euclidean space, and consider the energy functional 
+                            $E(v) = \int_\Omega |\nabla v|^2 + Q^2 \chi_{\{v>0\}}$. We consider functions $u$ 
+                            which are local minima of $E$, and ask two questions about them: how nice is $u$ 
+                            and how nice is the boundary of the support of $u$, $\partial \{u>0\}$? <br><br>
+                            Alt and Caffarelli address this question for functions $Q$ which are at least Holder 
+                            continuous in small enough dimension by showing (among other things) that $u$ is harmonic
+                            on the interior of its support and that the free boundary $\partial \{u>0\}$ is smooth 
+                            and has one more derivative than $Q$. Central to their approach was the fact that in a 
+                            small enough dimension, no singularities can arise. Applying techniques of minimal 
+                            surfaces and an original monotonicity formula, Georg Weiss was able to give dimension
+                            bounds on the singular set in higher dimensions.<br><br>
+                            In this talk, we will summarize this and other work of free boundary regularity, 
+                            and survey how one may be able to analyze the free boundary for $Q$ which is not continuous. 
+                            In particular, we will give a new monotoncity formula in the case that $Q$ is of "Dini type mean oscillation,"
+                            which need not be continuous.<br><br>
+							
+							Thursday, May 13th, 2:30pm
+							<h6>On the Limiting Case of the Allard Regularity Theorem</h6>
+							by Jessica Merhej<br><br>
+				            The theory of rectifiability provides a measure theoretic 
+                            notion of ``smoothness'' for surfaces which are not smooth in the usual sense. 
+                            Rectifiable varifolds were introduced to provide the right framework to 
+                            study minimal surfaces. Existence and regularity of rectifiable varifolds have 
+                            been broadly studied in Geometric Measure Theory. Allard's regularity theorem 
+                            is an outstanding result. It examines the question of regularity for a 
+                            rectifiable n-dimensional varifold $M$ , if the generalized mean curvature 
+                            of $M$ is bounded in $L^{p}$, for $p>n$.<br><br>
+                            This talk is concerned with the critical exponent $n$. In particular, how regular 
+                            will a rectifiable $n$-dimensional varifold $M$ be, if we only assume $L^{n}$ bounds on the generalized mean curvature of $M$? 
+                            <br><br>
+							
+							Thursday, May 15th, 2:30pm
+							<h6>Market Models in Stochastic Finance</h6>
+							by <a href=" http://www.math.washington.edu/~ansa1989/">Andrey Sarantsev</a> <br><br>
+							Why is the Brownian motion so widely used in 
+                            stochastic finance? We shall trace the history of 
+                            this exciting area of applied mathematics, from 
+                            the pioneering work of Bachelier (1900) to Samuelson model
+                            of geometric Brownian motion to current models.
+                            No background is necessary. 
+							<br><br>
+							
+							Thursday, May 1st, 2:30pm
+							<h6>Uniformly Distributed Measures are Locally Uniformly Rectifiable</h6>
+							by Abdallah Dali Nimer<br><br>
+							
+							A uniformly distributed measure $m$ is a Radon measure such that for all $x$ in its support and for 
+							all $r>0$, $m(B(x,r))=f(r)$, for some positive function $f$. If $f(r)=cr^n$, we say $m$ is $n$-uniform.<br><br>
+							
+							In a recent paper, X. Tolsa proved that $n$-uniform measures on $\mathbb{R}^d$ are  uniformly 
+                            rectifiable. In this presentation, I will start by presenting some background on this question. 
+                            I will then show the main ideas involved in the proof of a more general local version of this result,
+                            namely that uniformly distributed measures are locally uniformly rectifiable.
+                            <br><br>
+							
+							Thursday, April 24th, 2:30pm
+							<h6>Calderon's Problem and Complex Geometric Optics Solutions</h6>
+							by Yang Yang <br><br>
+							
+							Calderon's problem, which is also known as the electrical impedance tomography problem, was 
+							solved in 1987 for dimension $n \geq 3$ by Sylvester and Uhlmann using the complex geometric 
+							optics (CGO) solutions. Since then, these special solutions have found their applications in a 
+							wide range of inverse problems including inverse boundary problems, inverse scattering problems, 
+							coupled-physics problems, etc. In this talk, we will demonstrate the construction of the CGO 
+							solutions, and apply them to prove Calderon's problem for $n \geq 3$.
+							<br><br>
+							
+							Thursday, April 17th, 2:30pm
+							<h6> Optimal Transport and Cyclical Monotonicity</h6>
+							by <a href=" http:http://www.math.washington.edu/~wongting/">Leonard Wong</a><br><br>
+							
+							Suppose you control all oil mines and you know the demands of all cities. You also know the cost of 
+							transporting oil from one location to another. Designing a transportation plan to minimize total cost
+							 is a problem of optimal transport. Optimal transport theory arises in many areas from differential 
+							 geometry to economics. After formulating the Monge-Kantorovich optimal transport problem, we focus 
+							 on a geometric property of transportation plans called cyclical monotonicty. Intuitively, a plan 
+							 satisfies this property if it cannot be improved by any cyclical permutation. It is easy to show 
+							 that any optimal solution must satisfy cyclical monotonicty, but the sufficiency is more difficult 
+							 and requires some conditions to hold. We will present a recent new proof of the sufficiency by 
+							 Mathias Beiglboeck (2014) which applies the ergodic theorem. This talk will be accessible to 
+							 anyone with a general background in analysis.
+							<br><br>
+							
+							Thursday, April 10th, 2:30pm
+							<h6> Mixing of the Noisy Voter Model</h6>
+							by  Harishchandra Ramadas <br><br>
+							
+							The noisy voter model is a simple `interacting particle system' that can serve as a crude stochastic model 
+							for the spread of opinions in a human population, or the competition for territory between two species. We 
+							study the convergence to equilibrium ``mixing'' of this model, and show that this happens extremely fast -- 
+							more precisely, on an arbitrary graph with n vertices, the model mixes in time of $O(\log n)$, for arbitrarily 
+							small values of the ``noise parameter''. The talk will be accessible to non-Probabilists.<br><br>
+                            Dominic Yeo has written a 
+							<a href="http://eventuallyalmosteverywhere.wordpress.com/2014/03/23/mixing-of-the-noisy-voter-model/">nice blog post</a> about this result. <br><br>
+                            Reference: Ramadas, Harishchandra.  <a href="http://ecp.ejpecp.org/article/view/2968"> "Mixing of the noisy voter model" Elec. Comm. in Prob.</a>,
+                             Vol. 19, 8 March 2014.
+                             <br><br>
+							
+							Thursday, April 3rd, 2:30pm
+							<h6>Two Families of Particles with Annihilation on a Membrane</h6>
+							by  <a href="http://staff.washington.edu/louisfan/">Wai-Tong (Louis) Fan</a> <br><br>
+							
+							Mathematicians and scientists use interacting particle models to gain understanding of the emergence 
+							of macroscopic phenomena from microscopic laws of nature. My talk will focus on an interacting particle 
+							system which can model the transport of positive and negative charges in a solar cell. In this model, two 
+							families of random walks in two adjacent domains annihilate each other on a deterministic interface.<br><br>
+
+							Heuristically speaking, this could also be a model for population dynamics of two segregated species interacting at
+							a static boundary. The goal of my project is to study the evolution of particles in space and time. I will discuss 
+							the hydrodynamic limit and the fluctuation limit for the particle densities, that is, the behavior of the system at 
+							two different scales. The two limits can be described, respectively, by a coupled partial differential equations 
+							and a Gaussian process solving a stochastic partial differential equation. Other related models will be mentioned 
+							at the end of the talk.<br>
+						</div><!-- End Sp'14-->
+					
+						<!--Begin Wi '14-->
+						<div class = "menuItem">
+						
+
+
+							Thursday, March 13th, 2:30pm
+							<h6>Generalized Characters on Measure Algebras</h6>
+							by Alan Bartlett<br><br>
+
+							Let $X$ be a compact metric space, and $\mathcal{M}(X)$ the Banach space of complex Borel measures on $X$ under the total 
+							variation norm.  An <i>$L$-space</i> is a closed subspace $L$ of $\mathcal{M}$ which is closed under absolute continuity: 
+							$\nu \ll \mu$ and $\mu \in L$ implies $\nu \in L.$<br><br>
+
+							In this talk, we describe a generalization of Lebesgue decomposition to $L$-spaces, based on work of Host, 
+							Mela and Parreau.  We then use the Radon-Nikodym theorem to give local representations of $\mathcal{M}$ in spaces of 
+							integrable functions and its Banach space dual $\mathcal{M}^\ast$ in spaces of essentially bounded functions.  When $X$ 
+							is a compact abelian group, $\mathcal{M}(X)$ forms a Banach algebra under convolution, and we use the preceding material 
+							to give an interesting description of the Gelfand spectrum of $\mathcal{M}$ in terms of <i>generalized characters</i>,
+							due to Sreider.   These give rise to an action on measure valued operator algebras on $X$, with a few interesting
+							consequences.  In particular, we describe a power series like expansion on $\mathcal{M}$, and state a diagonalization result 
+							for matrix-valued measures strong mixing with respect to endomorphisms of $X$, based on work of Queffelec.<br><br>
+
+							Thursday, March 6th, 2:30pm
+							<h6>Sets of Locally Finite Perimeter and Rectifiability of Their Reduced Boundary</h6>
+							by Jessica Merhej<br><br>
+
+							The theory of "<i>rectifiability of sets</i>" provides a measure theoretic notion of "smoothness" for surfaces 
+							which are not smooth in the usual sense. A very important class of sets, to which we can apply our rectifiability 
+							criterion is sets with "<i>locally finite perimeter</i>." On these sets, there exists a canonical Radon measure that 
+							is supported on the boundary. Thus, we can get interesting information on what happens inside such boundaries. In this 
+							talk, we will see that the boundary of a set of locally finite perimeter is rectifiable. We also give a necessary and 
+							sufficient condition for sets to be of locally finite perimeter.<br><br>
+
+							Thursday, February 27th, 2:30pm
+							<h6>The Tensor Tomography Problem in Dimension Two</h6>
+							by Yang Yang <br><br>
+
+							In computerized tomography (CT), one concerns the recovery of a function from its integrals along geodesics. 
+							Similar problems for symmetric tensor fields arise in various areas, which are known as the tensor tomography 
+							problems. We will consider this problem in dimension $n=2$, and present an elegant proof of a geometric flavor 
+							discovered by Paternain, Salo, and Uhlmann. <br><br>
+
+							Thursday, February 20th, 2:30pm 
+							<h6>Increasing Stability Phenomena for the Schrödinger and the Diffusion Equations</h6>
+							by Ru-Yu Lai<br><br>
+
+							The problem of recovering potential in the Schrödinger equation from boundary measurements has been 
+							studied since the 1980s. It is well known that the problem is ill-posed, that is, a logarithmic stability 
+							estimate holds and is optimal. However, the logarithmic stability makes it difficult to design reliable 
+							reconstruction algorithms in practice since small errors in the data of the inverse problem result in large 
+							errors in the numerical reconstruction of physical properties of the medium. It has been observed numerically 
+							that the stability increases if one increases the frequency in some cases. In this talk, I will introduce several 
+							results which rigorously demonstrated the increasing stability behavior in different settings.<br><br>
+
+							Thursday, February 13th, 2:30pm
+							<h6>Analysis of Time-Like Graphical Models</h6>
+							by <a href="http://www.math.washington.edu/~tadic/">Tvrtko Tadic</a><br><br>
+
+							Modeling systems that involve uncertainty are often done using stochastic processes. Stochastic processes are a collection of
+							random variables indexed by some set $T$.
+							Classically, $T$ is a subset of (non-negative) real numbers and represents time. Recently, a lot of modeling has
+							been done when the stochastic processes are indexed by vertices $V$, where the conditional dependencies are encoded 
+							in the structure of the (directed or undirected) graph $G=(V,E)$. These are known as graphical models and have 
+							become very popular in machine learning.
+							<br><br>
+
+							We present a new model that combines the features of the two mentioned
+							models&mdash;processes indexed by a time-like graph. This is a continuous model
+							indexed by a graph with a built in time structure.
+							The model was introduced by Burdzy and Pal in 2011. Their model has strong
+							restrictions on the degrees of vertices, the structure of the graph, and the
+							distributions of processes defined on them.
+							<br><br>
+
+							During the talk we will give examples that illustrate these processes.
+							New results that enable us to define a wider family of processes on a
+							larger collection of graphs and new properties of the model induced by
+							time and the graph structure will be presented.
+							Connections to Markov random fields, the stochastic heat equation, as
+							well as generalized classical Markov and martingale properties for
+							some processes will be shown. We will conclude with a discussion of
+							the structure properties of time-like graphs, including the
+							presentation of the new algorithm that identifies the important
+							subfamily of time-like graphs.			
+							<br><br>						
+
+							Thursday, February 6th, 2:30pm
+							<h6>Gromov-Hausdorff Limits of Metric Spaces</h6>
+							by <a href="http://www.stephen-lewis.net">Stephen Lewis</a><br><br>
+
+							For two metric spaces $X$ and $Y$, the Gromov-Hausdorff distance ${\rm D_{GH}}(X,Y)$ is a quantity which compares the 
+							salient features of $X$ and $Y$ as metric spaces. In particular, ${\rm D_{GH}}(X,Y) = 0$ if and only if $\overline{X}$ is 
+							isometric to $\overline{Y}$. Moreover, ${\rm D_{GH}}$ is a metric on isometry classes of bounded complete metric spaces. This will allow 
+							us to define the limit of a sequence of uniformly bounded metric spaces $(X_i, d_i)$, or the limit of a sequence of
+							(potentially unbounded) pointed metric spaces $(X_i, d_i, x_i)$. We use the latter to make sense of tangents to 
+							metric spaces and give a survey of some work in this field.<br><br>
+
+							Thursday, January 30th, 2:30pm
+							<h6>The Correlation Functions Technique for Interacting Particle Systems</h6>
+							by <a href="http://staff.washington.edu/louisfan/">Wai-Tong (Louis) Fan</a><br><br>
+
+							A powerful method to study stochastic systems consisting of a large number of particles is the correlation 
+							functions technique. We will demonstrate this by establishing the propagation of chaos result and the hydrodynamic 
+							limit of some reaction-diffusion systems. These results provide us with the link connecting the microscopic behavior 
+							and the macroscopic evolution of the systems.
+							<br><br>		
+
+							Thursday, January 23rd, 2:30pm
+							<h6> Van der Waerden's Theorem and Multiple Birkhoff Recurrence</h6>
+							by Clayton Barnes <br><br>
+							Van der Waerden's theorem is a classic result relating finite partitions of the natural numbers 
+							to arithmetic progressions. Multiple Birkhoff recurrence is also a classic result on dynamical systems 
+							of compact metric spaces. In this talk, we will show how multiple Birkhoff recurrence implies van der 
+							Waerden's theorem, prove a special case of Birkhoff's result, and discuss generalizations of both.<br><br>
+
+
+							Thursday, January 16th, 2:30pm
+							<h6>The Regularity of Loewner Curves</h6>
+							by <a href="http://www.math.washington.edu/~tvhuy/">Huy Tran</a> <br><br>
+							​The Loewner equation gives a one-to-one correspondence between growing slit curves in a domain and certain
+							real-valued continuous functions called driving functions. C. Earle and A. Epstein (2001) showed that if the slit 
+							curve is in $C^n$ (respectively real analytic) then the driving function is in $C^{n-1}$ (respectively real analytic). 
+							Conversely, C. Wong (2012) showed that a $C^\beta$ driving function generates a $C^{\beta +1/2}$ curve for 
+							$1/2 <\beta \leq 2$ except when $\beta = 3/2$.<br><br>
+
+							In this talk, I will discuss new ideas to extend Wong's result for all $\beta>1/2$ 
+							(except for when $\beta$ is a half-integer) and to show that real analytic driving functions generate real 
+							analytic curves.<br><br>
+
+							This is joint work with Joan Lind.
+
+							<br><br>
+							Thursday, January 9th, 2:30pm
+							<h6>Triple Collisions of Brownian Particles</h6>
+							by <a href=" http://www.math.washington.edu/~ansa1989/">Andrey Sarantsev</a> <br><br>
+
+							Suppose we have a finite system of Brownian particles on the real line.
+							They move as Brownian motions with drift and diffusion coefficients depending on their rank. 
+							We say that they have triple collisions if, at a certain moment, at least three of them occupy the same
+							position on the real line. This is a bad phenomenon, and we provide conditions when it does not happen. Some open problems will be presented.
+
+
+
+						
+						</div><!--End Wi '14-->
+						<!--Begin Au '13-->
+						<div class = "menuItem">
+							Thursday, December 5th, 2:30pm
+							<h6>Uniform Measures and Uniform Rectifiability</h6>
+							by Abdalla Dali Nimer <br><br>
+
+							An $n$-uniform measure $\mu$  in $\mathbb{R}^d$  is a Radon measure such that for every $x$ 
+							in its support, and every $r>0$,  $\mu (B(x,r)) = c r^n$. Although they are essential to many important results 
+							in Geometric Measure Theory (notably Preiss' Theorem), they are still poorly understood.<br><br>
+
+							This talk will give an introduction to $n$-uniform measures, some important theorems in which 
+							they appear and will end with an overview of a recent paper by Xavier Tolsa in which he proved 
+							that $n$-uniform measures are uniformly $n$-rectifiable. 
+							It will be accessible to any student with a basic real-analysis background.
+							<br><br>
+
+							Thursday, November 21st, 2:30pm
+							<h6> Infinite Games, Determinacy, and the Relative Continuum Hypothesis </h6>
+							by Reid Dale <br><br>
+							The study of subsets of the real line led Cantor to invent set theory 
+							in the late 1800s, and his attempts to prove the continuum hypothesis 
+							eventually led to the subject now known as descriptive set theory.
+							Modern descriptive set theory has isolated the notion of infinite 
+							games as the proper framework to understand many properties of 
+							subsets of the real line–from perfection to measurability–and led 
+							to a construction of a model of set theory in which every set of 
+							real numbers is Lebesgue measurable under the assumption of an 
+							axiom known as the Axiom of Determinacy AD.This talk will address
+							the problem of the continuum hypothesis relative to sets with nice 
+							topological properties: we will talk about the validity of the
+							continuum hypothesis for closed, then Borel, and finally for projective sets.
+
+							<br><br>
+							Thursday, November 14th, 2:30pm
+							<h6>Pattern Avoiding Permutations 'Are' the Brownian Excursion</h6>
+							by Erik Slivken <br><br>
+							Permutations of size $n$ that avoid a particular pattern in $S_3$ can
+							be counted by the $n^{\rm th}$ Catalan number.  Dyck paths of length
+							$2n$ can also be counted by the $n^{\rm th}$ Catalan number.
+							Naturally there exists bijections between the two sets.  Remarkably,
+							given the right choice of bijection, both of these random objects
+							converge (in some sense) to the same thing, a Brownian excursion.  The
+							convergence to Brownian excursion helps answer all sorts of questions
+							about the pattern avoiding permutation, like the number of fixed
+							points of permutation.  This is joint work with Christopher Hoffman
+							and Douglas Rizzolo.
+
+
+							<br><br>
+							Thursday, November 7th, 2:30pm
+							<h6>Energy, Entropy and Arbitrage</h6>
+							by  <a href=" http:http://www.math.washington.edu/~wongting/">Leonard Wong</a> <br><br>
+
+							Portfolio managers invest their clients' money in stocks aiming to earn a higher return than that of the market (such as S&P500).
+							In this talk, we introduce an information-theoretic framework to analyze the performance of any portfolio with respect to the 
+							market index. It provides physical and geometric insights into when and why a strategy works, and we will see that relative 
+							entropy plays a key role. We propose a large class of strategies that can be easily implemented and outperform the market
+							under suitable conditions. This framework is also well-suited to analyze a hierarchical portfolio of portfolios. 
+							The mathematics is elementary and a lot of examples and pictures will be given. This is joint work with Soumik Pal.
+
+
+							<br><br>
+							Thursday, October 31st, 2:30pm
+							<h6> Competing Particle Systems</h6>
+							by <a href=" http://www.math.washington.edu/~ansa1989/">Andrey Sarantsev</a> <br><br>
+
+							Assume we have two particles on the real line. The lower one moves up with probability 1/3 and down with probability 2/3,
+							and the upper one moves up and down with probabilities 1/2. What is the stationary distribution for the gap process?
+							The same question may be asked: (i) when these particles move continuously; next, (ii) when there are three or more particles;
+							and finally, (iii) when there are countably many particles. This is a very recent research (2008-2013). <br><br>
+
+							The talk will be very nontechnical and accessible for the general audience. (People always say this, but this time it is going to 
+							be really accessible.)
+
+							<br><br>
+							Thursday, October 24th, 2:30pm
+							<h6> An Introduction to Inverse Problems</h6>
+							by Yang Yang<br><br>
+
+
+
+							The study of inverse problems aims to reconstruct interior information of a medium from various boundary measurements. 
+							It is widely used in medical imaging, geophysics, cloaking, non-destructive testing, astronomy, etc. 
+							In this talk I will introduce some typical inverse problems and their applications. 
+							I will use the inverse radiation transfer problem as an example to demonstrate how to derive internal information
+							from boundary measurements. This will be an introductory talk and no background is needed.
+
+
+
+							<br><br>
+							Thursday, October 10th and Thursday, October 17th, 2:30pm
+							<h6>Allard's Regularity Theorem</h6>
+							by Jessica Merhej<br><br>
+
+							The <b>October 10th</b> talk will exceptionally take place in <b>PDL C-36</b>. <br><br>
+
+							Questions of existence and regularity of minimal "submanifolds"
+							have been central to a classical problem in the calculus of variations. 
+							Minimal submanifolds are characterized by the property that their mean curvature vanishes.
+							Rectifiable varifolds are generalized submanifolds. In particular, a varifold is said to be stationary 
+							if it admits zero mean curvature. A natural question in this area is whether one can get any sort of
+							regularity on the varifold if the mean curvature is controlled in an integral sense. Allard's regularity 
+							theorem states that with the correct bounds on the upper density of the measure, and the $L^{p}$ norm of the
+							mean curvature, the varifold is a $C^{1,\alpha}$ submanifold.<br><br>
+							This talk will be divided into two sessions. In the first session, we will give a motivation, 
+							and a general overview of the subject, with the background needed to state and prove Allard's regularity theorem. 
+							In the second session we will sketch the proof of Allard's regularity theorem.
+
+
+							<br><br>
+							Thursday, October 3rd, 2:30pm
+							<h6>Local Set Approximation and Tangents of Arbitrary Sets</h6>
+							by <a href="http://www.stephen-lewis.net/">Stephen Lewis</a> <br><br>
+
+
+							We describe a set $A\subseteq \mathbb{R}^n$ as "smooth" if at 
+							each point $x\in A$, there is a plane $T_xA$ which approximates
+							$A$ arbitrarily well at small scales. However, in areas of math 
+							such as variational analysis, geometric measure theory, and other
+							non-smooth analyses, this setup won't give a complete picture.
+							Often, it is useful to consider sets $A$ which are well 
+							approximated at small scales by some general class of sets $\mathcal{S}$.
+							This allows us to take tangents of non-smooth objects, and 
+							investigate non-smooth situations such as real-algebraic varieties, 
+							the support of Radon measures, and almost-minimal surfaces to name a few.<br><br>
+
+
+							In this talk, we will give a framework of local set approximation and 
+							discuss a theorem about the "connectedness at infinity" of the cone of tangent sets.<br><br>
+
+							This is joint work with <a href="http://www.math.uconn.edu/~badger/">Matt Badger</a>.<br>
+						</div><!--End Au'13-->
+						<div class = "menuItem">
+							Thursday, May 17, 2:00pm
+							<h6>Conformal Welding Maps for Plane Trees</h6>
+							by Joel Barnes
+
+							<p>David Aldous's continuum random tree (CRT) is the scaling limit of uniform trees, and provides the underlying 
+							structure for important recent work on the scaling limit of random surfaces. The Hausdorff dimension of the CRT is 
+							2, but there is no known natural embedding of the CRT into the complex plane. We describe the welding problem for 
+							the CRT, and a potential path to a solution. Along the way, we apply Ahlfors's theory of quasiconformal maps to give 
+							an algorithm to solve the welding problem for finite trees, which may have application in the computation of polynomials 
+							for Grothendieck's dessins d'enfants (children's drawings). Pictures included.
+							</p>
+
+							Thursday, May 10, 2:00pm
+							<h6>Decoupling of Modes for the Elastic Wave Equation</h6>
+							by Justin Tittlefitz</br>
+
+							<p>We consider the elastic wave equation $u" = A(x,D)u; u = (u_1, \ldots,
+							u_n)$. Elastic waves in isotropic media exhibit two modes of
+							propagation; one where the displacement is in the direction of
+							propagation (the $P$-mode) and one where displacement is orthogonal to
+							propagation (the $S$-mode). By examining the orthogonal projections
+							($\pi_P$ and $\pi_S$) onto these modes, one can effectively "diagonalize"
+							the operator $A$, writing $A(x,D) = c_P^2(x) \Delta \pi_P + c_S^2(x)
+							\Delta \pi_S +$ lower order terms ($c_P$ and $c_S$ correspond to the
+							propagation speeds of the two modes). The question then arises: to
+							what extent are these modes preserved throughout a wave's evolution?
+							Specifically, for initial displacement $f$, if $\pi_S f = 0$, is $\pi_S u = 0$
+							(or vice-versa) for all $t$ as well? If not, what can be said about this
+							interaction?
+							</p>
+
+							<p>In this talk, we will discuss a result due to Brytik, deHoop, Smith
+							and Uhlmann, showing that the $P \leftrightarrow S$ interaction is smoothing of
+							degree 1. We will also cover some basic properties of
+							pseudodifferential operators in order to understand this problem, and
+							hopefully have time to discuss a related open question.
+							</p>
+
+							Thursday, April 12, 2:00pm
+							<h6>Invariance Principle and a Local Limit Theorem for Reflected Brownian Motion</h6>
+							by <a href="http://staff.washington.edu/louisfan/">Wai-Tong (Louis) Fan</a></br></br>
+
+							It is well known that Simple random walks in $\epsilon\, \mathbb{Z}^n$ converges to Brownian motion in $\mathbb{R}^n$ 
+							(the Donsker's Invariance Principle in 1950's). Moreover, some local limit theorem holds, which tells us that the 
+							convergence rate of the transition densities at any fixed point is about $\epsilon^n$. Do we have analogous result for 
+							Reflected Brownian Motion? We will discuss these results and illustrates standard techniques in obtaining heat kernel estimates. 
+							In particular,  we will discuss the probabilistic interpretations of Isoperimetric inequality, Nash's inequality and Poincare 
+							inequality.
+
+							</br></br>
+							Thursday, April 5, 2:00 pm
+							<h6>Tangent Measures and Geometry</h6>
+							by <a href="http://www.stephen-lewis.net/">Stephen Lewis</a></br></br>
+
+							One of the important tools in Geometric Measure Theory is the theory of tangent measures. We will talk about what it means for one measure to be "tangent" to another, and discuss some examples where the geometry behaves very nicely. A recent generalization called a pseudo-tangent measure will be explored near the end, as well as some recent work.</br> 
+						</div><!--End Sp12-->
+						<div class = "menuItem">
+													
+							Tuesday, November 15, 3:30 pm
+							<h6>Thermoacoustic Tomography in Elastic Media</h6>
+							by Justin Tittelfitz</br></br>
+
+							In this talk, we will discuss an emerging method of medical imaging known as thermoacoustic tomography. Mathematically, 
+							the problem is that of recovering the initial displacement $f$ for a solution $u$ of a wave equation in 
+							$[0,T] \times \mathbb{R}^3$, given measurements of $u$ on $[0,T] \times \partial \Omega$, where $\Omega \subset \mathbb{R}^3$ 
+							is some bounded domain containing the support of $f$.
+
+							This problem is relatively well-understood in acoustic media (i.e. for a scalar wave equation), but less is known about the 
+							problem in elastic media. In this talk, I will discuss this case; specifically, we assume $u = (u_1,u_2,u_3)$ solves the elastic 
+							wave equation 
+							$$
+								\partial_t^2u = \nabla \cdot \left( \mu(x) ((\nabla u) + (\nabla u)^T)\right) + 
+								\nabla (\lambda(x) \nabla \cdot u),
+							$$
+							and discuss sufficient conditions on the Lam&eacute; parameters $\mu$ and $\lambda$ to ensure recovery of 
+							$f$ is possible.
+
+							</br></br>Tuesday, November 1, 3:30 pm
+							<h6>Good Approximations and Parameterizations</h6>
+							by <a href=""http://www.stephen-lewis.net/">Stephen Lewis</a></br></br>
+
+							In 1960, Reifenberg proved the "Reifenberg Topological Disk" theorem; that any compact set in $\mathbb{R}^n$ "well approximated" 
+							by an m-plane at every point and scale is topologically an m-dimensional ball. Since then, many variations of this, employing 
+							different approximation strengths and approximating sets, have been proven in different areas, including minimal surface and 
+							harmoic function theory. In this talk, I will draw a lot of pictures, state some of these theorems and one of my own, and try to 
+							suggest a common theme and a couple of conjectures to put these into a larger theory.
+
+							</br></br>
+							Tuesday, October 18, 3:00pm
+							<h6>Concentration of Measure Inequalities for Diffusion</h6>
+							by <a href="http://www.math.washington.edu/~ansa1989/">Andrey Sarantsev</a></br></br>
+
+							Does a certain random variable have heavy or light tails? In other words, can this random variable be very large with a 
+							relatively high probability? We consider a diffusion process (the solution of a stochastic differential equation) and apply 
+							some techniques to figure this out for its maximum on a finite time interval. We also explore some connections with logarithmic 
+							Sobolev inequalities.
+
+						</div><!--End Au11-->
+						<div class = "menuItem">
+														
+							Thursday, June 2nd, 2:30 pm
+							<h6>Hybrid Inverse Problems: UM-EIT and PAT/TAT</h6>
+							by Ilker Kocyigit</br></br>
+
+							There are different imaging modalities and each has its own advantages
+							and disadvantages, for example electrical impedance tomograpy (EIT)
+							safe, non-invasive and provides high contrast, whereas ultrasound
+							usually has high resolution. Hybrid methods aim to combine some of the
+							advantages of these different modalities. We will talk about two such
+							methods; Ultrasound Modulated EIT and Photoacoustic/Thermoacoustic
+							Tomography, and related inverse problems along with some of the known
+							results.
+
+							</br></br>
+
+							Thursday, May 26th, 2:30pm
+							<h6>What is the Black-Scholes Model?</h6>
+							by <a href="http://www.math.washington.edu/~jtokle/">Josh Tokle</a></br></br>
+
+							To buy an option means to pay some money today in order to be able to buy shares of a stock at a predetermined price at some 
+							point in the future. What is a fair price for such a transaction? In 1997, Black and Scholes won a Nobel prize for their 
+							mathematical model for options pricing, which expresses the price of an option as the solution to an SDE. In this high-level talk, 
+							I will derive the Black-Scholes formula using as little financial jargon as possible.
+
+							</br></br>
+
+							Thursday, May 5th, 2:30pm
+							<h6>Stationary Distribution and Reflecting Diffusions</h6>
+							by <a href="http://www.math.washington.edu/~maduarte/">Mauricio Duarte</a></br></br>
+
+							Brownian motion is the king of diffusions. Its smoothing properties and the connection with the Laplacian have allowed 
+							mathematicians to study properties of the stationary regime for Brownian driven processes in detail. Nonetheless, interesting 
+							diffusions that are not driven by BM can arise and we need to take a different approach to study their stationary behaviour. 
+							This is achieved for reflecting process by taking a look at the local stationary process.  We'll present the so called Reflected 
+							BM with inert drift as an illuminating example and talk about how these ideas can be extended to more general cases.
+							<br><br>
+							
+							Based on the work by Richard F. Bass, Krzysztof Burdzy, Zhen-Qing Chen, and Martin Hairer. Stationary distributions for diffusions with inert drift. Probab. Theory Related Fields, 146(1-2):1.47, 2010.
+
+
+							</br></br>
+
+							Thursday, April 28th, 2:30pm
+							<h6>Hydrodynamic Limit of Interacting Particle Systems</h6>
+							by <a href="http://staff.washington.edu/louisfan/">Wai-Tong (Louis) Fan</a> </br></br>
+
+							In scientific research, people are often interested in the macroscopic evolution of a large (typically of the order of $10^{23}$) number of objects which are governed by some microscopic rules. Some typical examples are chemically reacting
+							systems, the evolution of some thermodynamic characteristics of a fluid, population genetics, etc. The macroscopic evolutions are sometimes described by deterministic differential equations, called the hydrodynamic limits. e.g. For a large
+							number of RBMs on a bounded Lipschitz domain, the hydrodynamic limit is the heat equation with Neumann boundary condition.
+							In this talk, we will outline some hydrodynamic behaviors and derive rigorously the hydrodynamic limit of a typical interacting 
+							particle system.
+
+							</br></br>
+
+
+							Thursday, April 21st, 2:30 pm
+							<h6> Thermoacoustic and Thermoelastic Tomography</h6>
+							by Justin Tittlefitz</br></br>
+
+							 In this talk, we will discuss an emerging method of medical imaging known as thermoacoustic tomography. Mathematically, 
+							 we investigate the problem of recovering the initial displacement $f$ for a solution $u$ of a scalar (acoustic) wave equation in 
+							 $[0,T] \times \mathbb{R}^3$, given measurements of $u$ on $[0,T]^B \times \partial \Omega$, where 
+							 $\Omega \subset \mathbb{R}^3$ is some bounded domain containing the support of $f$. 
+
+							If time permits, we will also look at the problem of thermoelastic tomography, where we instead assume $u = (u_1,u_2,u_3)$ solves the elastic wave equation
+							\begin{align*}
+								 \partial_t^2u = \nabla \cdot \left( \mu(x) ((\nabla u) + (\nabla u)^T)\right) + \nabla (\lambda(x) \nabla \cdot u),
+							\end{align*}
+							and discuss sufficient conditions on the Lam&eacute; parameters $\mu$ and $\lambda$ to ensure recovery of $f$ is possible.
+
+							</br></br>
+							Thursday, April 14th, 2:30 pm
+							<h6>Analysis on Domains with Rough Boundaries</h6>
+							by <a href="http://www.math.uconn.edu/~badger/">Matt Badger</a></br></br>
+
+							Two classic settings for analysis are domains with smooth boundary (the upper half plane) or simple geometry (convex domains). 
+							However, there is a defect in only considering these simple models.  As Mandelbrot says in his introduction to The Fractal 
+							Geometry of Nature: "clouds are not spheres, mountains are not cones, coastlines are not circles, and bark is not smooth, nor 
+							does lightning travel in a straight line."<br><br>
+
+							In this talk, I will survey different classes of "rough domains" where analysis can be carried out.  As time permits, 
+							we will visit results from Hunt and Wheeden's study of harmonic functions on Lipschitz domains in the 1960s to Hofmann, Mitrea 
+							and Taylor's recent (2010) demonstration that the $L^p$ Neumann problem is solvable on chord arc domains with small constant.
+						</div><!--End Sp11-->
+						<div class = "menuItem">
+							
+							Tuesday, March 8th, 4:00 pm
+							<h6>Stochastic Processes Meet Partial Differential Equations</h6>
+							by <a href="http://www.math.washington.edu/~ansa1989/">Andrey Sarantsev</a></br></br>
+
+							It is possible to solve elliptic and parabolic PDE by means of probability theory.  In fact, many concepts from PDE 
+							(Green's function, harmonic measure, fundamental solution) can be translated into the language of stochastic processes; 
+							so these two theories
+							are dual. For any second-order elliptic operator, there is a Markov process which corresponds to this operator. 
+							The simplest example, which is the Brownian motion and the Laplacian, can be substantially generalized.
+
+							</br></br>Tuesday, February 22, 4:00 pm
+							<h6>The Geometry of Measures and Scaling</h6>
+							by <a href="http://www.stephen-lewis.net/">Stephen Lewis</a></br></br>
+
+							In this talk, we will investigate the following question: "What does the scaling of a measure tell us about the geometry of 
+							its support?"  Obviously, this requires some explanation.  We will make sense of this question, look at some pictures, and 
+							see one or two concrete and easily stated results.
+
+							</br></br>Tuesday, February 15, 4:00 pm
+							<h6>An Inverse Source Problem in Radiative Transfer</h6>
+							by <a href="http://www.math.washington.edu/~hubenjm/">Mark Hubenthal</a></br></br>
+
+							We consider the radiative transfer equation, which governs the behavior of photons in a medium in the presence of some unknown source f. For a generic set of scattering and absorption coefficients, it is shown that the direct problem is well-posed. It is also known that the outgoing intensities of photons on the boundary of the domain uniquely determine f if the background absorption and scattering parameters are known a priori. This has applications in optical molecular imaging and radiation detection.
+
+							</br></br>Tuesday, February 8, 4:00 pm
+							<h6>Interacting Particle Systems, Free Boundaries, and Weak Solutions to a Non-Linear Parabolic Equation in the Unit Interval</h6>
+							by Joel Barnes</br></br>
+
+							I will talk about a differential equation from my research and (hopefully) prove a uniqueness result for weak solutions.  
+							Along the way I will define the Stefan problem, discuss boundary conditions, and describe three isomorphic discrete Markov 
+							Processes if time allows. Comfort in $L^2$ is the only prerequisite for the main portion of the talk.
+							</br></br>
+
+							Tuesday, February 1, 4:00 pm
+							<h6>Reflecting Processes on Bounded Domains</h6>
+							by <a href="http://www.math.washington.edu/~maduarte/">Mauricio Duarte</a></br></br>
+
+							Reflecting processes are a natural object to study in bounded domains. In general, they behave as Brownian motion inside of 
+							the domain and reflect instantaneously at the boundary in a given angle, which varies along the boundary. We'll focus on 
+							describing the stationary distribution of such processes and will give a precise formula for its density in bounded planar 
+							domains.
+
+							</br></br>Tuesday, January 25, 4:00pm
+							<h6>Brownian Motion and Stochastic Calculus</h6>
+							by <a href="http://www.math.washington.edu/~ansa1989/">Andrey Sarantsev</a></br></br>
+
+							Brownian Motion is the most important process in the theory of continuous-time
+							stochastic (=random) processes. This random function has amazing and very irregular behaviour; 
+							e.g. it is continuous but nowhere differentiable and has infinite variation.
+							Nevertheless, it is possible to develop differential and integral calculus for random functions related to this process.
+							The main result is Ito's Change-of-Variable Formula; it shows that there are effects in stochastic calculus
+							that do not have anything analogous in the classical calculus.
+
+							</br></br>Tuesday, January 11, 4:00pm
+							<h6>Rectifiable Sets and the Besicovitch 1/2-conjecture</h6>
+							by <a href="http://www.math.uconn.edu/~badger/">Matt Badger</a></br></br>
+
+							The Lebesgue density theorem says that for Lebesgue almost every point $x$ in a subset $A$ of $n$-dimensional Euclidean space, 
+							the density $\lim_{r\rightarrow 0} m(A\cap B(x,r))/r^n$ exists and is equal to $m(B(0,1))$. For lower dimensional 
+							Hausdorff measures this result is typically false! This is exciting, because it means that using Hausdorff measures one can 
+							see a variety of behaviors.  Rectifiable sets are those sets on which the density exists at almost every point.  
+							The Besicovitch 1/2-conjecture is an outstanding 73-year old conjecture about rectifiable sets.
+						</div>
+						
+						<br><!--Formatting; a bit hackish-->
+						
+						<script>
+							$(document).ready(function(){
+								
+								$('#toTop').click( function(){
+									$('html, body').animate({
+										scrollTop: 0
+									}, 1000);
+								});
+							});
+						</script>
+						
+						<div class="backUp protectHighlight">
+							<div class="button protectHighlight" id = "close">Close</div> <div class ="button protectHighlight" id='toTop'>Back to the top</div>
+						</div>	
+					</div><!--End menuContent-->
+
+				</div><!--End Menu-->
+			</div><!--End content-->
+		</div><!--End maindiv-->
+	</body>
+</html>

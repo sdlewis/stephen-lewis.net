@@ -1,0 +1,318 @@
+/*
+Color theme code:
+
+Body background: #e0e0e0
+maindiv background: #fafafd
+secondary-main bg: #b0e0f0
+secondary-main bg hover: #98c8d8
+secondary-accent bg: #d8a8d8
+secondary-accent bg hover:#c0a0c0
+
+accent text color: #940094
+accent text hover color: #0070a0
+
+
+*/
+	
+html {/*Keeps the bar on the side for formatting*/
+	overflow-y:scroll;
+}
+
+::selection  {
+	background:#d8a8d8;
+}
+
+::-moz-selection {
+	background:#b0e0f0;
+} 
+
+/*.shortLong, .shortLong .abstract, .shortLong .abstract .container {
+	-moz-text-size-adjust:inherit;
+	-webkit-text-size-adjust:inherit;
+	-ms-text-size-adjust:inherit;
+}*/
+
+body {
+	margin: 0em;
+    background: #e0e0e0;
+    color: #000000;
+	text-align: left;	
+	font-family: Calibri, sans-serif;
+	/*font-size: 12pt;*/
+}
+
+@media (min-device-width: 800px) {
+	.maindiv {
+		width:85%;
+		margin-bottom:60px;
+		margin-top:40px;
+		border-radius:20px;
+	}
+	.menuTitle{display:inline-block; float:left;}
+	#titleText{
+		font-size:24pt;
+	}
+	.scrollArrow:hover{
+		background:#008090;
+		color:#eeeeee;
+	}
+	.button:hover{
+		background:#98c8d8;
+		color:#940094;
+	}
+	.menuButton.open:hover {
+		 background-color:#c0a0c0;
+	}
+
+	.menuButton:hover {
+		 background-color: #98c8d8;
+		 cursor:pointer;
+	}
+}
+
+@media (max-device-width:799px) {
+	.menuTitle,.menuButton{
+		font-size: 5vw;
+	}
+	.menuTitle{
+		display:none;
+	}
+	#titleText{
+		font-size:5.3vw;
+	}
+}
+
+/*
+Hack to get around empty id link
+hide a hidden message in the html :)
+*/
+#top{
+	color:#e0e0e0;
+	overflow:hidden;
+	height:0px;
+}
+
+.maindiv {
+    margin-left:auto;
+    margin-right:auto;
+	background: #fafafd;
+	overflow:hidden;
+}
+
+.topbar {
+	background:#b0e0f0;
+	padding:0em;
+}
+
+.notice{
+	color:#f04;
+	font-weight:900;
+}
+
+.curve {
+	background: #f0c8f0;
+	padding: .75em;
+	border-radius:.5em;
+}
+
+.problem{
+	background: #f0e0f0;
+	padding: .75em;
+	border-style:solid;
+	border-radius:.5em;
+	border-width: .5em;
+	border-color:#98c8d8;
+	margin:.2em;
+}
+
+#classGrade{
+	display: block;
+	margin-right:.75em;
+	float:left;
+	background: #f0c8f0;
+	padding: .75em;
+	border-radius:.5em;
+}
+
+#titleText {
+	display:inline-block;
+	padding:2em 0em;
+	font-weight:700;
+	margin-left:0.375em;
+	z-index:2
+}
+
+.topbar img{
+	position:absolute;
+	z-index:1;
+}
+
+#imageContainer{
+	position:absolute;
+	opacity:0;
+}
+
+.content{
+	padding-bottom:0.625em;
+}
+
+
+.menuContent, .intro {
+	padding: 1em 1em .5em 1em;
+}
+
+.answer .solution{
+	opacity:0;
+	padding: .5em;
+}
+
+.answerButton{
+	position:relative;
+	z-index:2;
+}
+
+.button {
+	 background:#b0e0f0;
+	 cursor:pointer;
+	 border-radius:10px;
+	 padding:4px 10px;
+	 font-size:15pt;
+	 display:inline;
+	 font-weight:bold;
+	 color:#940094;
+}
+
+a {
+     text-decoration:none;
+     font-weight:bold;
+}
+
+a:link, a:visited {
+     color:#940094;
+}
+
+a:active, a:hover {
+     color:#008090;
+}
+
+#protectLink {
+	color: #000;
+}
+
+h1, h2, h3, h4, h5, h6, .topbar { font-family: Corbel, sans-serif; }
+
+h6 {
+	font-size:13pt;
+	font-weight: 900;
+	padding:0px;
+	margin:0px;
+}
+
+p {font-size:12pt;}
+.menuContent p, .menuContent h6 {margin-top:0px;}
+
+.menuDecoration{
+	position:relative;
+	z-index:-1;
+	height:2em;
+	padding:0em;
+	background:rgba(150,0,150,.4);
+	
+}
+
+.scrollArrow {
+	display:none;
+	position:absolute;
+	z-index:2;
+	background: #98c8d8;
+}
+
+.scrollArrow.right{
+	left:0em;
+	opacity:0;
+}
+
+.menu{
+	position:relative;
+	top:0em;
+	bottom:0em;
+}
+
+.menuItem:not(:nth-child(1)) {
+    display:none;
+}
+
+.menuHeader {
+	background:#b0e0f0;
+	cursor:default;
+	padding: 0em .625em;
+}
+
+.protectHighlight{
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.menuBar {
+	display:inline-block;
+	overflow:hidden;
+	margin-bottom:0em;
+	position:relative;
+	top:0px;
+	left:0px;
+	float:left;
+	font-size:19pt;
+	font-family: Corbel, sans-serif;
+}
+
+.menuScroll{width:9999px;}
+
+.menuButton{
+	display:inline-block;
+	float:left;
+	margin-right:.3em;
+}
+
+.scrollArrow:hover{cursor:pointer;} 
+
+.menuButton, .menuTitle, .scrollArrow{
+	font-weight:900;
+	font-family: Corbel, sans-serif;
+	padding: .75em 0em;
+	font-size:19pt;
+	margin-bottom:0em
+}
+
+.scrollArrow{
+	padding: .75em .4em;
+}
+
+.menuButton.open {
+	background:#d8a8d8;
+}
+
+.menuContent {
+	margin-bottom:0em;
+}
+
+#classGrade{
+	display: block;
+	margin-right:.75em;
+	float:left;
+	background: #f0c8f0;
+	padding: .75em;
+	border-radius:.5em;
+}
+
+#dataBar {/*Used for testing
+-----delete end comment under here
+to display				||||	 \/    ||||
+Change display to see input data */
+	display:none;
+/* */
+}
+

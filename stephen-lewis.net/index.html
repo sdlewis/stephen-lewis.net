@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<!--
+
+Web page designed by 
+Stephen Lewis
+
+Design and implementation Copyright Stephen Lewis, 2013
+
+-->
+<html>
+	<head>
+		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro|Lato|Molengo' rel='stylesheet' type='text/css'>
+		<meta name="description" content="I am Stephen Lewis, researcher and math Ph.D. student at the University of Washington. I study  geometric measure theory and variational problems.">
+		<meta name="keywords" content="Stephen Lewis, Stephen D. Lewis, Stephen D Lewis, Stephen, D, Lewis, math, Stephen math, Stephen UW, geometric measure theory, stedalew, Stephen Lewis UW, Stephen D Lewis UW">
+		<title>Stephen Lewis</title>
+    
+		<link rel="stylesheet" type="text/css" href="stedalew.css" title="Lewis Stylesheet" />
+		<link rel="icon" type="image/png" href="myImages/favIconGsas3.png"/>
+		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script type='text/javascript' src='myScripts/profileImage.js'></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+		</script>
+		<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+		<script type='text/javascript' src='myScripts/menu.js'></script>
+
+	</head>
+	
+	
+	<body>
+		<div id="curtain"></div>
+		<div class="topbar"></div>
+		<img id = 'largeProfileImg' src= 'myImages/largeProfile.jpg'/>		
+		<!--<div class="banner">
+			<img id='banner' src='myImages/StephenBannerCropped.png'/>
+		</div>-->
+		<div class="maindiv">
+			<div class="leftCol">
+				<div class="profile">
+					<div class="profileImage">
+						<img src = "myImages/pic1.jpg"/>
+					</div><!--End Profile Image-->
+					<!--<p>
+						Stephen Lewis<br/>
+						School of Mathematics<br/>
+						127 Vincent Hall<br/>
+						206 Church St SE<br/>
+						Minneapolis, MN 55455
+					</p>
+					<p>
+					   Office: Vincent Hall 221 (<a href="http://www1.umn.edu/twincities/maps/VinH/" target = "__map">Map</a>) <br/>
+					   E-mail: <a href="mailto:iam@stephen-lewis.net">iam@stephen-lewis.net</a> <br/>
+					   Office Hours: W 12:30-2:30, Th 2-4, and by appointment
+					</p>-->
+
+					<p>I want to shoot big and tackle hard challenges. 
+					If you do too, then let's connect!</p>
+					
+					<table style="width:100%;background:#CED;">
+						  <tr>
+							<td align = "right"><b>Email</b></td>
+							<td>|</td> 
+							<td><a href="mailto:iam@stephen-lewis.net">iam@stephen-lewis.net</a> </td>
+						  </tr>
+						  <tr>
+							<td align = "right"><a  href="files/resume.pdf">Resume</a> </td>
+							<td>|</td> 
+							<td class = "linksBar"><a class = "picLink" href="http://github.com/sdlewis/">
+							<img class = "unlit" src="myImages/git2.png"/>
+							<img class = "lit" src="myImages/git2Lit.png"/>
+							<a href="http://www.linkedin.com/in/sl1tinsoldier/">
+							<img class = "unlit" src="myImages/linkedin.jpg"/>
+							<img class = "lit" src="myImages/linkedinLit.png"/>
+						</a>
+						</a></td>
+						  </tr>
+						</table>
+					
+						<!--<a href="http://github.com/sdlewis/" class = "gitHub"></a>-->
+				</div><!--End profile -->
+			</div><!--End left_col-->
+  
+
+			<div class="rightCol-bg">
+			<div class="rightCol-curtain"></div>
+			<div class="rightCol">
+				<div class="name">Stephen Lewis</div>
+				<p id = "log">Hi</p>
+				<p class = "intro">
+					Hello! My name is Stephen, and I like programming computers, analyzing data, and anything mathematical.
+					I am currently looking for roles as a software engineer or data scientist. 
+				</p>
+				<p class = "intro">
+					I studied a Ph.D. in math at the
+					University of Washington from 2009 to 2014. While there, I did research in 
+					<a href="http://en.wikipedia.org/wiki/Geometric_measure_theory">geometric measure theory</a>
+					with <a href="http://www.math.washington.edu/~toro/">Tatiana Toro</a>.
+					I also founded the <a href="gsas">graduate student analysis seminar</a>. After that, I was an Assistant Professor 
+					at the University of Minnesota where I particularly enjoyed teaching
+					<a href="4242">applied linear algebra</a>.
+				</p>
+				
+				<p class = "intro">
+					I started coding as a sophomore math major at the University of Colorado. I really enjoyed it, and decided to study a
+					minor in computer science. Since then, I've gotten to learn and grow a lot as a software developer by
+					solving research math problems.
+				</p>
+				
+				<p class = "intro">
+					In addition to solving interesting problems, I also enjoy playing guitar, slacklining, climbing, biking, and cooking. 
+				</p>
+				
+				<p id = "log"></p>
+				<p id = "dataBar"></p>
+								
+				<!--<p class = "intro">
+					The <a href="http://students.washington.edu/cdophys/">Career Development Organization</a> 
+					provides career resources to graduate students in science and mathematics. We host an annual
+					<a href="http://students.washington.edu/cdophys/ND/index.shtml">Networking Day</a>.
+				</p>-->
+				
+				
+				<div class = "menu">
+				
+					<div class = "menuHeader">
+						<div class = "menuBar">
+							<div class = "menuScroll">
+								<h2 class = "menuButton">Research</h2> 
+								<h2 class = "menuButton">Teaching</h2> 
+								<h2 class = "menuButton">Activities</h2> 
+								<h2 class = "menuButton">Links</h2>
+							</div>
+						</div>
+					</div><!--End menuHeader-->
+					
+					<div class = "menuContent">	
+						<div class = "menuItem">
+							<h4>Local Set Approximation</h4>
+							<p class = "menuInfo"> Local set approximation (LSA) is the study of the local structure of sets through
+							their tangents and pseudotangents. This substantially generalizes smooth surfaces, which
+							are a sets with continuously varying tangent planes. LSA is a natural framework for studying the geometry
+							of sets with singularities. For example, we give sufficient conditions
+							on the tangents and psuedotangents of a set $A$ to conclude that $A$ decomposes into 
+							a regular and a singular part.</p>
+							
+							<p> &bull; Joint w/ <a href="http://www.math.uconn.edu/~badger/">Matt Badger</a>. 
+							Local set approximation: Mattila-Vuorinen type sets, Reifenberg type sets, and tangent sets.
+							Submitted.
+							<a href="http://arxiv.org/abs/1409.7851">arXiv</a>, 
+							<a href="files/Badger-Lewis-Local-Set-Approximation.pdf">pdf</a>
+							
+							<p> &bull; Local set approximation: infinitesimal to local theorems and applications.
+							Doctoroal Thesis (2012), University of Washington.
+							<a href="files/Stephen-Lewis-Thesis.pdf">pdf</a>
+							</p>
+		   
+							<h4>Geometric Measure Theory</h4>
+							<p class = "menuInfo">Given a measure in Euclidean space, 
+							what is the connection between the quantitative properties of
+							the measure and its geometric structure? This research explores this 
+							question through a novel aspect of singular set geometry.</p>
+							
+							<p>
+							&bull; Singular points of H&ouml;lder asymptotically optimally doubling measures. Submitted. 
+							<a href="http://arxiv.org/abs/1301.1993">arXiv</a>
+							</p>
+
+							<h4>Algebra</h4> 
+							<p>The full combinatorics arising from matrix representations of $U_n(\mathbb{F}_q)$ is 
+							 computationally impossible. However a smaller class of the respresentations 
+							 called supercharacters can be used functionally to solve problems (such as
+							 random walks) which we here analyze.</p>
+							<p>
+							&bull; Joint w/ <a href="author-list">the following</a>.
+							Supercharacters, symmetric functions in noncommuting variables, and related Hopf algebras.
+							<i>Advances in Math</i> <b>229</b> (2012), no. 4, 2310-2337. <a href="http://arxiv.org/abs/1009.4134">arXiv</a>
+							</p>
+							<p> &bull; Joint w/ <a href="http://euclid.colorado.edu/~thiemn/">Nat Thiem</a>. 
+							Nonzero coefficients in restriction and tensor products of supercharacters of $U_n(\mathbb{F}_q)$. 
+							<i>Advances in Math</i> <b>227</b> (2011), 40-72.  <a href="http://arxiv.org/abs/0912.1880">arXiv</a>
+							</p>
+							<p class = "menuInfo"> &bull; Restriction of supercharacters of $U_n(\mathbb{F}_2)$. 
+							Undergraduate Honors Thesis (2009) at the University of Colorado, Boulder. 
+							<a href="files/Stephen-Lewis-Undergrad-Thesis.pdf">pdf</a>
+							</p>
+							
+						</div><!--End menuItem of Research section-->
+
+						<div class = "menuItem teachingContent">
+							<!--<p> I am not teaching this quarter. For a list of previous classes,
+							see below. </p>-->
+							<h4>Current Classes</h4>
+							<ul>
+								<li><a href="4242">Math 4242 Applied Linear Algebra</a>: Instructor</li>
+							</ul>
+							<h4>Classes taught at University of Washington</h4>
+							<ul>
+								<li>Math 530 Real Analysis: Instructor, Su14</li>
+								<li>Math 309 Linear Analysis: Instructor, Sp14</li>
+								<li>Math 324 Advanced Multivariable Calculus: Instructor, Wi13</li>
+								<li>Math 126 Multivariable Calculus: TA, Wi12, Au10</li>
+								<li>TA Mentor: Au10</li>
+								<li>Math 124 Differential Calculus: TA, Sp10, Wi10, Au09</li>
+							</ul>
+						</div><!-- End Teaching Section-->
+					
+		  
+						<div class = "menuItem">
+							<p>I founded the <a href="http://www.stephen-lewis.net/gsas/">Graduate Student Analysis Seminar</a>
+							at the University of Washington.
+							</p>
+							
+							<p>
+								The <a href="http://students.washington.edu/cdophys/">
+								Career Development Organization</a> (CDO) for Physics, Math, and Astronomy students provides
+								resources to post-docs and graduate students interested in industrial research careers. In particular,
+								we host an annual <a href="http://students.washington.edu/cdophys/ND/index.shtml">
+								Networking Day</a>.
+							</p>
+
+							<p>Check out <a href="http://www.artsci.washington.edu/newsletter/april10/MathDay.asp">Math Day</a>,
+							a fun day of math for middle and high school students!</p>
+						</div><!--End Activities-->
+						
+						<div class = "menuItem links">
+							<div>
+								<h4 class = "permanent">External Links</h4>
+								
+								<ul>
+									<li><a href="http://www.stephen-lewis.net/gsas">UW Grad Student Analysis Seminar</a></li>
+									<li><a href="http://www.math.washington.edu">UW Math Department</a></li>
+									<li><a href="http://www.math.washington.edu/~solomyak/Seminar/sem.html">Rainwater Seminar</a></li>
+									<li><a href="http://students.washington.edu/cdophys/">Career Development Organization</a> - Career support for STEM graduate students.</li> 
+									<li><a href="http://detexify.kirelabs.org/classify.html">De$\TeX$ify</a> - $\LaTeX$ decoding. Use, vote, improve, and support!</li> 
+
+								</ul>								
+							</div>
+						</div><!-- End Links Section-->
+						
+					</div><!--End menuContent-->
+				</div><!--End Menu-->
+			</div><!--End right_col-->  
+			</div><!--End rightCol-bg-->
+			<script>
+				placeBackground();
+				$( window ).resize(placeBackground);
+				
+				function placeBackground() {
+					picHeight = 492;
+					$( "#log" ).append( "placeBackground called. " );
+					x = $('.menu').position().left - $('.rightCol').offset().left;
+					y = $('.menu').position().top - $('.rightCol').offset().top+40;
+					pos = x+'px '+y+'px';
+					$('#log').append('position = ' + pos);
+					$('#log').append(' height = ' + picHeight);
+					$('.rightCol-bg').css('background-position', x+'px '+y+'px');
+					$('.rightCol-curtain').css('height', (y+picHeight)+'px');
+					$('.rightCol').css('margin-top', -(y+picHeight)+'px');
+				}
+			</script>
+		</div><!--End maindiv-->
+	</body>
+</html>
